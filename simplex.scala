@@ -35,7 +35,7 @@ class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], va
 	}
 	
 	def this(a:Tuple3) = {
-		val v4 = new Variable(1, "x", true)
+		/*val v4 = new Variable(1, "x", true)
 		val v5 = new Variable(2, "y", true)
 		val v6 = new Variable(1, "z", true)
 		val listeLinks2 = List(v4,v5,v6)
@@ -44,7 +44,7 @@ class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], va
 		val v7 = new Konstante(12, true)
 		val listeRechts2 = List(v7)
 		
-		val listeRechts2 = List(listeLinks2, listeRechts2, "<=")
+		val listeRechts2 = List(listeLinks2, listeRechts2, "<=")*/
 		
 		this(listeLinks2, listeRechts2, "<=")
 	}
