@@ -46,7 +46,7 @@ class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], va
 		
 		val listeRechts2 = List(listeLinks2, listeRechts2, "<=")*/
 		
-		this(listeLinks2, listeRechts2, "<=")
+		//this(listeLinks2, listeRechts2, "<=")
 	}
 	
 
@@ -84,7 +84,7 @@ object Simplex extends App {
 	val g2 = new UnGleichung(listeLinks2, listeRechts2, "<=")
 	
 	/* 3. Gleichung */
-	val g3 = new Ungleichung(1,2,3,"<=",10)
+	//val g3 = new Ungleichung(1,2,3,"<=",10)
 	
 	
 	
