@@ -21,6 +21,8 @@ class Variable(val faktor:Int, val variable:String, val vorzeichen:Boolean) {
 }
 
 
+
+
 class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], val zeichen:String) {
 	
 	println(toString())
@@ -33,29 +35,32 @@ class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], va
 	def printSeite[A](variablen:List[A]) : String = {
 		variablen.map(a => a.toString).reduceLeft( (a,b) => a+b) 		
 	}
-	
-	def this(a:Tuple3) = {
-		/*val v4 = new Variable(1, "x", true)
+}
+
+
+
+object UnGleichung {
+	def apply(zeichen:String, rechts:Int, links:Int*) = {
+		
+
+		val v4 = new Variable(1, "x", true)
 		val v5 = new Variable(2, "y", true)
 		val v6 = new Variable(1, "z", true)
 		val listeLinks2 = List(v4,v5,v6)
 	
 	
-		val v7 = new Konstante(12, true)
+		val v7 = new Konstante(122, true)
 		val listeRechts2 = List(v7)
 		
-		val listeRechts2 = List(listeLinks2, listeRechts2, "<=")*/
 		
-		//this(listeLinks2, listeRechts2, "<=")
+		new UnGleichung(listeLinks2, listeRechts2, zeichen)
 	}
-	
-
-	
-	
-	
-
-
 }
+
+
+
+
+
 
 
 object Simplex extends App {
@@ -82,26 +87,10 @@ object Simplex extends App {
 	val listeRechts2 = List(v7)
 	
 	val g2 = new UnGleichung(listeLinks2, listeRechts2, "<=")
-	
-	/* 3. Gleichung */
-	//val g3 = new Ungleichung(1,2,3,"<=",10)
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 	
 }
-
-
-
-
-
 
 
 
