@@ -40,20 +40,25 @@ class UnGleichung[A](val linkeVariablen:List[A], val rechteVariablen:List[A], va
 
 
 object UnGleichung {
+	import scala.collection.mutable.ListBuffer
+	
 	def apply(zeichen:String, rechts:Int, links:Int*) = {
 		
+		var listeLinks = new ListBuffer[Variable]();
+		
 
-		val v4 = new Variable(1, "x", true)
-		val v5 = new Variable(2, "y", true)
-		val v6 = new Variable(1, "z", true)
-		val listeLinks2 = List(v4,v5,v6)
+		links.foreach {
+			listeLinks += new Variable(2,"x", true)
+		}
+
 	
-	
-		val v7 = new Konstante(122, true)
-		val listeRechts2 = List(v7)
+
+		
+		val vR = new Konstante(rechts, true)
+		val listeRechts = List(vR)
 		
 		
-		new UnGleichung(listeLinks2, listeRechts2, zeichen)
+		new UnGleichung(listeLinks, listeRechts, zeichen)
 	}
 }
 
@@ -77,16 +82,8 @@ object Simplex extends App {
 	val g1 = new UnGleichung(listeLinks1, listeRechts1, "<=")
 	
 	
-	/* 2. Gleichung */
-	val v4 = new Variable(1, "x", true)
-	val v5 = new Variable(2, "y", true)
-	val v6 = new Variable(1, "z", true)
-	val listeLinks2 = List(v4,v5,v6)
-	
-	val v7 = new Konstante(12, true)
-	val listeRechts2 = List(v7)
-	
-	val g2 = new UnGleichung(listeLinks2, listeRechts2, "<=")
+	/* 2. Gleichung */	
+	val g2 = UnGleichung("=", 1, 10, 20, 4)
 
 
 	
